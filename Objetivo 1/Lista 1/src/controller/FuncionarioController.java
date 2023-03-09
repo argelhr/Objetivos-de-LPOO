@@ -27,5 +27,7 @@ public class FuncionarioController {
         System.out.println("Funcionario 2 com get");
         System.out.println(f2.getNome());
         System.out.println(f2.getSalario());
+
+
     }
 }
