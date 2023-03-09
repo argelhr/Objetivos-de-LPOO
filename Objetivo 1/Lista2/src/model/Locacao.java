@@ -1,11 +1,14 @@
 package model;
 
 import java.sql.Time;
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.Date;
 
 public class Locacao {
-    private Date dataLocacao,dataDevolucao;
-    private Time horaLocacao,horaDevolucao;
+    private int OS;
+    private LocalDate dataLocacao,dataDevolucao;
+    private LocalTime horaLocacao,horaDevolucao;
     private int quilometragem;
     private double valorCalcao,valor_locacao;
     private boolean devolvido;
@@ -13,7 +16,8 @@ public class Locacao {
     public Locacao() {
     }
 
-    public Locacao(Date dataLocacao, Date dataDevolucao, Time horaLocacao, Time horaDevolucao, int quilometragem, double valorCalcao, double valor_locacao, boolean devolvido) {
+    public Locacao(int OS, LocalDate dataLocacao, LocalDate dataDevolucao, LocalTime horaLocacao, LocalTime horaDevolucao, int quilometragem, double valorCalcao, double valor_locacao, boolean devolvido) {
+        this.OS = OS;
         this.dataLocacao = dataLocacao;
         this.dataDevolucao = dataDevolucao;
         this.horaLocacao = horaLocacao;
@@ -24,35 +28,43 @@ public class Locacao {
         this.devolvido = devolvido;
     }
 
-    public Date getDataLocacao() {
+    public int getOS() {
+        return OS;
+    }
+
+    public void setOS(int OS) {
+        this.OS = OS;
+    }
+
+    public LocalDate getDataLocacao() {
         return dataLocacao;
     }
 
-    public void setDataLocacao(Date dataLocacao) {
+    public void setDataLocacao(LocalDate dataLocacao) {
         this.dataLocacao = dataLocacao;
     }
 
-    public Date getDataDevolucao() {
+    public LocalDate getDataDevolucao() {
         return dataDevolucao;
     }
 
-    public void setDataDevolucao(Date dataDevolucao) {
+    public void setDataDevolucao(LocalDate dataDevolucao) {
         this.dataDevolucao = dataDevolucao;
     }
 
-    public Time getHoraLocacao() {
+    public LocalTime getHoraLocacao() {
         return horaLocacao;
     }
 
-    public void setHoraLocacao(Time horaLocacao) {
+    public void setHoraLocacao(LocalTime horaLocacao) {
         this.horaLocacao = horaLocacao;
     }
 
-    public Time getHoraDevolucao() {
+    public LocalTime getHoraDevolucao() {
         return horaDevolucao;
     }
 
-    public void setHoraDevolucao(Time horaDevolucao) {
+    public void setHoraDevolucao(LocalTime horaDevolucao) {
         this.horaDevolucao = horaDevolucao;
     }
 
@@ -91,7 +103,8 @@ public class Locacao {
     @Override
     public String toString() {
         return "Locacao{" +
-                "dataLocacao=" + dataLocacao +
+                "OS=" + OS +
+                ", dataLocacao=" + dataLocacao +
                 ", dataDevolucao=" + dataDevolucao +
                 ", horaLocacao=" + horaLocacao +
                 ", horaDevolucao=" + horaDevolucao +
