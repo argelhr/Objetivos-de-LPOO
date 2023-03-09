@@ -57,7 +57,7 @@ public class ContaController {
 
         System.out.println("pesquisando o codigo 3");
         contas.forEach(conta -> {
-            if(conta.getNumero() == 3L) {
+            if(conta.getNumero() == 4L) {
                 System.out.println("ACHEI");
                 System.out.println(conta);
             }
